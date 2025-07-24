@@ -1,0 +1,35 @@
+<section class="hero-split-container">
+    <div class="hero-panel panel-seeker">
+        <div class="panel-content">
+            <span class="panel-icon material-icons">person_search</span>
+            <h2 class="panel-title">For Job Seekers</h2>
+            <p class="panel-description">Create your profile, showcase your skills, and find the job that's right for
+                you.</p>
+            <a href="#" class="btn btn-seeker">Find Your Next Role</a>
+        </div>
+    </div>
+
+    <div class="hero-panel panel-poster">
+        <div class="panel-content">
+            <span class="panel-icon material-icons">business_center</span>
+            <h2 class="panel-title">For Employers</h2>
+            <p class="panel-description">Connect with top talent by posting your job opportunity.</p>
+            <div class="poster-options">
+                <div class="poster-card">
+                    <div class="poster-card-content">
+                        <h3 class="poster-card-title">Company</h3>
+                        <p class="poster-card-text">Hiring for your organization.</p>
+                    </div>
+                    <a [routerLink]="['/company']" class="btn btn-poster">Post as a Company</a>
+                </div>
+                <div class="poster-card">
+                    <div class="poster-card-content">
+                        <h3 class="poster-card-title">Individual</h3>
+                        <p class="poster-card-text">Hiring for a personal project or role.</p>
+                    </div>
+                    <a [routerLink]="['/individual']" class="btn btn-poster-alt">Post as an Individual</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

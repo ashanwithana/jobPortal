@@ -1,0 +1,44 @@
+.hero-split-container {
+    position: relative;
+}
+
+.theme-toggle-container {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 10;
+}
+
+.theme-toggle-btn {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color);
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--icon-bg-hover);
+    color: var(--text-primary);
+}
+
+.theme-toggle-btn .material-icons-outlined {
+    font-size: 24px;
+}
+
+.icon-dark {
+    display: none;
+}
+
+.dark-theme .icon-dark {
+    display: inline-block;
+}
+
+.dark-theme .icon-light {
+    display: none;
+}

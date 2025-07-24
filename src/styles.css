@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import Required Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+
+/* 
+ * DEFAULT LIGHT THEME 
+ * These variables are used by all components.
+*/
+:root {
+    --primary-color: #6d28d9;
+    --primary-light: #ede9fe;
+    --primary-hover: #5b21b6;
+
+    --secondary-color: #111827;
+    --secondary-hover: #000000;
+
+    --background-primary: #ffffff;
+    --background-secondary: #f9fafb;
+    --background-card: #ffffff;
+
+    --text-primary: #111827;
+    --text-secondary: #374151;
+    --text-subtle: #6b7280;
+    --text-on-primary: #ffffff;
+
+    --border-color: #e5e7eb;
+    --shadow-color: rgba(0, 0, 0, 0.07);
+
+    --icon-color: #6b7280;
+    --icon-bg-hover: #f3f4f6;
+}
+
+/* 
+ * DARK THEME OVERRIDES
+ * These variables are automatically used when the <body> has the 'dark-theme' class.
+*/
+body.dark-theme {
+    --primary-color: #8b5cf6;
+    --primary-light: #4c1d95;
+    --primary-hover: #a78bfa;
+
+    --secondary-color: #f9fafb;
+    --secondary-hover: #ffffff;
+
+    --background-primary: #111827;
+    --background-secondary: #1f2937;
+    --background-card: #374151;
+
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-subtle: #9ca3af;
+    --text-on-primary: #ffffff;
+
+    --border-color: #4b5563;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+
+    --icon-color: #9ca3af;
+    --icon-bg-hover: #374151;
+}
+
+/* 
+ * GLOBAL BASE STYLES
+ * Resets and base styles for the entire application.
+*/
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
