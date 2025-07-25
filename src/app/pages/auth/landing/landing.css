@@ -1,4 +1,3 @@
-/* This ensures the component behaves predictably in the layout */
 :host {
     display: block;
     width: 100%;
@@ -8,7 +7,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    /* This is crucial for making the component fill the screen vertically */
+
     min-height: 100vh;
 }
 
@@ -19,10 +18,9 @@
     align-items: center;
     padding: 48px;
     box-sizing: border-box;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
-/* Use the global variables for backgrounds from styles.css */
 .panel-seeker {
     background-color: var(--background-primary);
 }
@@ -47,12 +45,14 @@
     margin-bottom: 24px;
     background-color: var(--primary-light);
     color: var(--primary-color);
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
 .panel-title {
-    font-size: 36px;
+
+    font-size: clamp(28px, 5vw, 36px);
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.25;
     margin-bottom: 16px;
     color: var(--text-primary);
 }
@@ -103,7 +103,6 @@
     color: var(--text-subtle);
 }
 
-/* Button Styles */
 .btn {
     display: inline-block;
     padding: 14px 28px;
@@ -121,7 +120,7 @@
 .btn.btn-seeker {
     background-color: var(--primary-color);
     color: var(--text-on-primary);
-    width: 100%;
+    /* width: 100%; */
 }
 
 .btn.btn-seeker:hover {
@@ -150,26 +149,54 @@
     color: var(--primary-color);
 }
 
-
-/* Responsive Design */
 @media (max-width: 1024px) {
     .hero-split-container {
+
         grid-template-columns: 1fr;
+
+        min-height: auto;
     }
 
+    .panel-poster {
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+@media (max-width: 768px) {
     .hero-panel {
-        min-height: auto;
-        padding: 64px 32px;
+
+        padding: 64px 24px;
+    }
+
+    .panel-description {
+
+        font-size: 16px;
+    }
+
+    .panel-icon {
+
+        width: 70px;
+        height: 70px;
+    }
+
+    .panel-icon .material-icons {
+        font-size: 36px;
     }
 }
 
 @media (max-width: 480px) {
+    .hero-panel {
+        padding: 64px 24px;
+    }
+
     .poster-card {
         flex-direction: column;
         align-items: flex-start;
+        padding: 20px;
     }
 
     .poster-card .btn {
         width: 100%;
+        box-sizing: border-box;
     }
 }

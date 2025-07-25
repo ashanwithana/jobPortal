@@ -5,7 +5,7 @@
 .theme-toggle-container {
     position: absolute;
     top: 24px;
-    right: 24px;
+    right: 8px;
     z-index: 10;
 }
 
