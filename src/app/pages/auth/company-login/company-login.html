@@ -1,1 +1,75 @@
-<p>company-login works!</p>
+<div class="registration-page-wrapper">
+    <div class="branding-panel">
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="branding-content">
+            <h1 class="branding-quote">"The platform that transformed how we build our team."</h1>
+            <p class="branding-company">VP of Engineering, leading Tech Company</p>
+        </div>
+    </div>
+
+    <div class="form-panel">
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Create Your Company Account</h2>
+                <p>Already registered? <a href="/login" class="login-link">Log In Here</a></p>
+            </div>
+
+            <form>
+                <h3 class="form-section-title">Account Credentials</h3>
+                <div class="form-field">
+                    <input type="text" id="name" name="name" required placeholder=" ">
+                    <label for="name">Company Name</label>
+                </div>
+                <div class="form-field">
+                    <input type="email" id="email" name="email" required placeholder=" ">
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="form-field">
+                    <input type="password" id="password" name="password" required placeholder=" " minlength="8">
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-field">
+                    <input type="password" id="password" name="password" required placeholder=" " minlength="8">
+                    <label for="password">Confirm Password</label>
+                </div>
+
+                <!-- SECTION 2: CONTACT & LOCATION -->
+                <h3 class="form-section-title">Contact & Location</h3>
+                <div class="form-grid">
+                    <div class="country-code-selector">
+                        <select id="countryCode" name="countryCode" required>
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+1">🇨🇦 +1</option>
+                            <option value="+44">🇬🇧 +44</option>
+                            <option value="+61">🇦🇺 +61</option>
+                            <option value="+49">🇩🇪 +49</option>
+                            <option value="+91">🇮🇳 +91</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder=" ">
+                        <label for="phoneNumber">Phone Number</label>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <input type="text" id="city" name="city" required placeholder=" ">
+                        <label for="city">City</label>
+                    </div>
+                    <div class="form-field">
+                        <input type="text" id="country" name="country" required placeholder=" " readonly value="USA">
+                        <label for="country" class="readonly-label">Country</label>
+                    </div>
+                </div>
+
+                <!-- Form actions -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Create Company Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,327 @@
+@keyframes animated-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+:host {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--background-secondary);
+}
+
+.registration-page-wrapper {
+    display: grid;
+    grid-template-columns: 45fr 55fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- Branding Panel --- */
+.branding-panel {
+    position: relative;
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    background: linear-gradient(-45deg, var(--primary-color), #4c1d95, #2c1a55, #111827);
+    background-size: 400% 400%;
+    animation: animated-gradient 15s ease infinite;
+}
+
+.background-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: #a78bfa;
+    top: -50px;
+    left: -80px;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: #8b5cf6;
+    bottom: -100px;
+    right: -150px;
+}
+
+.branding-content {
+    position: relative;
+    z-index: 2;
+}
+
+.branding-quote {
+    font-size: clamp(30px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 24px 0;
+}
+
+.branding-company {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* --- Form Panel --- */
+.form-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    border-radius: 24px;
+    background-color: var(--background-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.dark-theme .form-card {
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.form-header h2 {
+    font-size: clamp(24px, 5vw, 26px);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+}
+
+.form-header p {
+    font-size: 15px;
+    color: var(--text-subtle);
+    margin: 0;
+}
+
+.form-header .login-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-header .login-link:hover {
+    text-decoration: underline;
+}
+
+.form-field {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--text-primary);
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.2s ease;
+}
+
+.form-field input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-field label {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    font-size: 15px;
+    color: var(--text-subtle);
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+}
+
+.form-field input:focus~label,
+.form-field input:not(:placeholder-shown)~label {
+    top: -14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-field::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -1px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.form-field:focus-within::after {
+    transform: scaleX(1);
+}
+
+.form-field input:read-only,
+.form-field input:read-only:focus {
+    border-bottom-color: var(--border-color);
+    cursor: default;
+}
+
+.form-field input:read-only+label,
+.form-field input:read-only:not(:placeholder-shown)+label {
+    color: var(--text-subtle);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.form-grid-contact {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 28px;
+}
+
+.country-code-selector select {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-secondary);
+    font-size: 15px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.country-code-selector select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.dark-theme .country-code-selector select {
+    background-color: var(--background-card);
+}
+
+.form-grid .form-field,
+.form-grid-contact .form-field {
+    margin-bottom: 0;
+}
+
+.form-actions {
+    margin-top: 24px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--primary-light);
+}
+
+/* 
+ * =========================================
+ *  IMPROVED RESPONSIVE DESIGN
+ * =========================================
+*/
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .registration-page-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+        /* Allow content to dictate height */
+    }
+
+    .branding-panel {
+        display: none;
+        /* Hide branding panel to prioritize form */
+    }
+
+    .form-panel {
+        padding: 48px;
+    }
+}
+
+/* Phone View */
+@media (max-width: 768px) {
+    .form-panel {
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    /* Switch to a simpler, solid card for a cleaner mobile UI */
+    .form-card {
+        max-width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        padding: 40px 24px;
+    }
+
+    .form-grid,
+    .form-grid-contact {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        margin-bottom: 0;
+        /* Grids don't need margin if fields have it */
+    }
+
+    .form-grid .form-field {
+        margin-bottom: 28px;
+        /* Re-add margin to fields inside a now-stacked grid */
+    }
+
+    .form-grid .form-field:last-child {
+        margin-bottom: 0;
+    }
+}
