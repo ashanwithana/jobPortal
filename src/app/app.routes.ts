@@ -5,6 +5,7 @@ import { IndividualRegister } from './pages/auth/individual-register/individual-
 import { Login } from './pages/auth/login/login';
 import { ForgetPassword } from './pages/auth/forget-password/forget-password';
 import { ResetPassword } from './pages/auth/reset-password/reset-password';
+import { EmailConfirm } from './pages/auth/email-confirm/email-confirm';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -14,6 +15,7 @@ export const routes: Routes = [
     { path: 'login', component: Login },
     { path: 'forgot-password', component: ForgetPassword },
     { path: 'reset-password', component: ResetPassword },
+    { path: 'verify-email', component: EmailConfirm },
 
 
 
