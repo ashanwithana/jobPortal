@@ -1,44 +1,48 @@
 <div class="registration-page-wrapper">
+    <!-- Left Panel: Aspirational Branding -->
     <div class="branding-panel">
         <div class="background-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
         </div>
         <div class="branding-content">
-            <h1 class="branding-quote">"The platform that transformed how we build our team."</h1>
-            <p class="branding-company">VP of Engineering, leading Tech Company</p>
+            <h1 class="branding-quote">"A seamless experience that connected me with my dream role."</h1>
+            <p class="branding-company">Lead Designer, Top Startup</p>
         </div>
     </div>
 
+    <!-- Right Panel: The Individual Registration Form -->
     <div class="form-panel">
         <div class="form-card">
             <div class="form-header">
-                <h2>Create Your Company Account</h2>
-                <p>Already registered? <a href="/login" class="login-link">Log In Here</a></p>
+                <!-- "YourApp" logo has been removed -->
+                <h2>Create Your Account</h2>
+                <p>Already have an account? <a [routerLink]="['/login']" class="login-link">Log In Here</a></p>
             </div>
 
             <form>
-                <h3 class="form-section-title">Account Credentials</h3>
-                <div class="form-field">
-                    <input type="text" id="name" name="name" required placeholder=" ">
-                    <label for="name">Company Name</label>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <input type="text" id="firstName" name="firstName" required placeholder=" ">
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="form-field">
+                        <input type="text" id="lastName" name="lastName" required placeholder=" ">
+                        <label for="lastName">Last Name</label>
+                    </div>
                 </div>
+
+                <div class="form-field">
+                    <input type="text" id="organization" name="organization" required placeholder=" ">
+                    <label for="organization">Company or Organization</label>
+                </div>
+
                 <div class="form-field">
                     <input type="email" id="email" name="email" required placeholder=" ">
                     <label for="email">Email Address</label>
                 </div>
-                <div class="form-field">
-                    <input type="password" id="password" name="password" required placeholder=" " minlength="8">
-                    <label for="password">Password</label>
-                </div>
-                <div class="form-field">
-                    <input type="password" id="password" name="password" required placeholder=" " minlength="8">
-                    <label for="password">Confirm Password</label>
-                </div>
 
-                <!-- SECTION 2: CONTACT & LOCATION -->
-                <h3 class="form-section-title">Contact & Location</h3>
-                <div class="form-grid">
+                <div class="form-grid-contact">
                     <div class="country-code-selector">
                         <select id="countryCode" name="countryCode" required>
                             <option value="+1">🇺🇸 +1</option>
@@ -54,6 +58,7 @@
                         <label for="phoneNumber">Phone Number</label>
                     </div>
                 </div>
+
                 <div class="form-grid">
                     <div class="form-field">
                         <input type="text" id="city" name="city" required placeholder=" ">
@@ -65,9 +70,21 @@
                     </div>
                 </div>
 
+                <div class="form-field">
+                    <input type="password" id="password" name="password" required placeholder=" " minlength="8">
+                    <label for="password">Password</label>
+                </div>
+
+                <!-- NEW "Confirm Password" Field -->
+                <div class="form-field">
+                    <input type="password" id="confirmPassword" name="confirmPassword" required placeholder=" "
+                        minlength="8">
+                    <label for="confirmPassword">Confirm Password</label>
+                </div>
+
                 <!-- Form actions -->
                 <div class="form-actions">
-                    <button type="submit" class="submit-btn">Create Company Account</button>
+                    <button type="submit" class="submit-btn">Create My Account</button>
                 </div>
             </form>
         </div>
